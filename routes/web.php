@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/order', 'OrderController@store')->name('order')->middleware('auth');
+Route::match(['get','post'], '/makecall', 'VoiceController@makeCall');
+
+// Route::match(['get', 'post'], '/receivecall', 'VoiceController@receiveCall');

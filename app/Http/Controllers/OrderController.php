@@ -9,7 +9,9 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
+        
         $order = factory(\App\Order::class)->create();
+      
 
         $request->user()->notify(new OrderProcessed($order));
 
